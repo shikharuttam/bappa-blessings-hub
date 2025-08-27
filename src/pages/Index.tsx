@@ -5,8 +5,8 @@ import ganpatiImage from '@/assets/ganpati-image.jpg';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-5 py-16 bg-festive-gradient">
-      <div className="festive-card w-full max-w-4xl p-10">
+    <div className="min-h-screen px-5 py-16 bg-festive-gradient">
+      <div className="festive-card w-full max-w-4xl p-10 mx-auto">
         {/* Garland Decoration */}
         <div className="garland-decoration" aria-hidden="true" />
 
