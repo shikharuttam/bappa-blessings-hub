@@ -1,5 +1,6 @@
 import FloatingPetals from '@/components/FloatingPetals';
 import AudioPlayer from '@/components/AudioPlayer';
+import GanpatiAarti from '@/components/GanpatiAarti';
 import ganpatiImage from '@/assets/ganpati-image.jpg';
 
 const Index = () => {
@@ -45,8 +46,11 @@ const Index = () => {
         {/* Audio Player */}
         <AudioPlayer />
 
+        {/* Ganpati Aarti */}
+        <GanpatiAarti />
+
         {/* Footer */}
-        <div className="mt-5 text-sm opacity-80">
+        <div className="mt-8 text-sm opacity-80">
           Made with devotion and joy ✨
         </div>
       </div>
