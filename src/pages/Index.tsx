@@ -58,6 +58,13 @@ const Index = () => {
         <div className="mt-8 text-sm opacity-80">
           Made with devotion and joy ✨
         </div>
+        
+        {/* Name at the end */}
+        <div className="mt-4 text-center">
+          <p className="text-lg font-semibold text-festive-primary">
+            - Bhoomi ji
+          </p>
+        </div>
       </div>
 
       {/* Floating Petals Animation */}
