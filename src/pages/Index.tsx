@@ -10,12 +10,18 @@ const Index = () => {
         {/* Garland Decoration */}
         <div className="garland-decoration" aria-hidden="true" />
 
-        {/* Ganpati Image */}
-        <img 
-          src={ganpatiImage} 
-          alt="Lord Ganpati" 
-          className="ganpati-image mb-4"
-        />
+        {/* Ganpati Image with Mooshak */}
+        <div className="relative mb-4">
+          <img 
+            src={ganpatiImage} 
+            alt="Lord Ganpati" 
+            className="ganpati-image"
+          />
+          {/* Mooshak (Mouse) - Ganesha's Vehicle */}
+          <div className="absolute -bottom-2 right-8 bg-white/20 backdrop-blur-sm rounded-full p-2 border border-white/30 animate-bounce">
+            <span className="text-2xl" role="img" aria-label="Mooshak - Ganesha's mouse vehicle">🐭</span>
+          </div>
+        </div>
 
         {/* Main Title */}
         <h1 className="festive-title mb-2">
