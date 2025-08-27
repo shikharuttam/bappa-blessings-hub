@@ -1,42 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Festive Ganesh Chaturthi Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Festive Color Palette */
+    --background: 33 100% 94%; /* soft sandal */
+    --background-secondary: 30 100% 97%; /* lighter sandal */
+    --foreground: 25 55% 15%; /* warm dark text */
+
+    --primary: 13 100% 60%; /* saffron orange */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 39 100% 50%; /* golden glow */
+
+    --secondary: 177 38% 40%; /* teal-green */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 45 87% 47%; /* festive gold */
+    --accent-foreground: 25 100% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 55% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --muted: 30 50% 88%;
+    --muted-foreground: 25 25% 45%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --border: 0 0% 0% / 0.06;
+    --ring: 13 100% 60%;
+    --radius: 1.75rem;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Festive Gradients */
+    --gradient-festive: radial-gradient(1200px 800px at 20% -10%, hsl(25 100% 89%) 0%, transparent 60%), 
+                        radial-gradient(1200px 800px at 120% 110%, hsl(30 100% 93%) 0%, transparent 60%), 
+                        linear-gradient(180deg, hsl(var(--background-secondary)), hsl(var(--background)));
+    
+    --gradient-button: linear-gradient(180deg, hsl(45 100% 70%), hsl(39 100% 65%));
+    --gradient-gold: linear-gradient(90deg, transparent, hsl(var(--accent)), transparent);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Festive Shadows */
+    --shadow-card: 0 20px 60px hsl(0 0% 0% / 0.08), inset 0 1px 0 hsl(0 0% 100% / 0.7);
+    --shadow-button: 0 6px 18px hsl(0 0% 0% / 0.12), inset 0 1px 0 hsl(0 0% 100% / 0.6);
+    --shadow-button-hover: 0 10px 20px hsl(0 0% 0% / 0.15), inset 0 1px 0 hsl(0 0% 100% / 0.7);
+    --shadow-image: 0 6px 20px hsl(0 0% 0% / 0.2);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-button: transform 0.12s ease, box-shadow 0.12s ease;
 
     --sidebar-background: 0 0% 98%;
 
@@ -54,52 +67,138 @@ All colors MUST be HSL.
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif;
+    background: var(--gradient-festive);
+    overflow: hidden;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .festive-card {
+    @apply bg-card border border-border/10 shadow-2xl relative overflow-hidden text-center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+  }
+
+  .festive-title {
+    @apply font-bold text-primary;
+    font-size: clamp(2rem, 4vw + 1rem, 4rem);
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 0 hsl(0 0% 100% / 0.7);
+    font-weight: 800;
+  }
+
+  .festive-mantra {
+    @apply font-semibold;
+    color: hsl(25 45% 35%);
+    font-size: clamp(1.05rem, 1.2vw + 0.9rem, 1.4rem);
+  }
+
+  .festive-blessing {
+    @apply max-w-none mx-auto;
+    font-size: clamp(1rem, 1.1vw + 0.8rem, 1.35rem);
+    max-width: 52ch;
+  }
+
+  .festive-button {
+    @apply inline-block font-bold text-center no-underline transition-all;
+    background: var(--gradient-button);
+    color: hsl(45 100% 12%);
+    padding: 0.8rem 1.1rem;
+    border-radius: 0.875rem;
+    border: 1px solid hsl(0 0% 0% / 0.12);
+    box-shadow: var(--shadow-button);
+    transition: var(--transition-button);
+  }
+
+  .festive-button:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-button-hover);
+  }
+
+  .festive-chip {
+    @apply border border-dashed border-black/15 px-3 py-2 rounded-full text-sm;
+    background: linear-gradient(180deg, #fff, #fff8e8);
+  }
+
+  .gold-divider {
+    width: 120px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--gradient-gold);
+    filter: drop-shadow(0 1px 0 hsl(0 0% 0% / 0.1));
+  }
+
+  .ganpati-image {
+    @apply block mx-auto rounded-full;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    box-shadow: var(--shadow-image);
+  }
+}
+
+@layer utilities {
+  .floating-petals {
+    @apply absolute inset-0 overflow-hidden pointer-events-none;
+  }
+
+  .petal {
+    @apply absolute opacity-80;
+    top: -20px;
+    width: 10px;
+    height: 14px;
+    background: hsl(var(--primary));
+    border-radius: 10px 10px 2px 10px;
+    filter: blur(0.2px);
+    animation: fall linear infinite;
+  }
+
+  .petal:nth-child(3n) {
+    background: hsl(39 100% 65%);
+  }
+
+  .petal:nth-child(5n) {
+    background: hsl(var(--secondary));
+  }
+
+  .garland-decoration {
+    @apply absolute inset-0 pointer-events-none;
+    background: 
+      radial-gradient(circle at 10% -10%, hsl(var(--primary)) 0 10px, transparent 11px),
+      radial-gradient(circle at 20% -10%, hsl(39 100% 65%) 0 10px, transparent 11px),
+      radial-gradient(circle at 30% -10%, hsl(var(--secondary)) 0 10px, transparent 11px),
+      radial-gradient(circle at 40% -10%, hsl(11 79% 60%) 0 10px, transparent 11px),
+      radial-gradient(circle at 50% -10%, hsl(33 93% 64%) 0 10px, transparent 11px),
+      radial-gradient(circle at 60% -10%, hsl(var(--primary)) 0 10px, transparent 11px),
+      radial-gradient(circle at 70% -10%, hsl(39 100% 65%) 0 10px, transparent 11px),
+      radial-gradient(circle at 80% -10%, hsl(var(--secondary)) 0 10px, transparent 11px);
+    mask: radial-gradient(100% 40px at 50% 0, #000 99%, transparent 100%);
+    height: 64px;
+    top: -2px;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translate3d(var(--x, 0), 105vh, 0) rotate(360deg);
+      opacity: 0.95;
+    }
   }
 }
