@@ -32,8 +32,7 @@ const Index = () => {
 
         {/* Blessing Message */}
         <p className="festive-blessing mb-6">
-          Bhoomi ji May Ganpati ji bring you <strong>love</strong>, <strong>peace</strong>, 
-          prosperity, and everything you truly wish for in life. 🙏
+          May this Ganesh Chaturthi Bappa ji fulfill all what you want and give you all the happiness you want in life. 🙏
         </p>
 
         {/* Blessing Chips */}
