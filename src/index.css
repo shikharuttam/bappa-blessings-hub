@@ -83,7 +83,6 @@
     @apply text-foreground;
     font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif;
     background: var(--gradient-festive);
-    overflow: hidden;
     margin: 0;
   }
 }
